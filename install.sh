@@ -16,8 +16,11 @@ BRANCH="main"
 # --- Preconditions ----------------------------------------------------------
 
 # The clone needs git; deploy.sh additionally needs git (for its --no-index
-# diffs) and python3 (to render settings.json). Fail early with a clear message.
-for cmd in git python3; do
+# diffs), python3 (to render settings.json) and cmp (to decide what changed).
+# cmp is worth checking even though it is near-universal: it runs as a condition,
+# so a missing one reads as "the files differ" instead of failing. Fail early
+# with a clear message.
+for cmd in git python3 cmp; do
     if ! command -v "$cmd" >/dev/null 2>&1; then
         echo "Error: '$cmd' is required but not installed." >&2
         exit 1

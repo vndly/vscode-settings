@@ -6,10 +6,10 @@ INPUT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/settings"
 OUTPUT="$HOME/.config/Code/User"
 
 # Keys in settings.json whose value belongs to this machine rather than to the
-# repo. The repo still declares them, but the machine's current value is carried
-# over so that state accumulated locally is not thrown away. Every other key
-# comes from the repo. cSpell.userWords is the spell-check dictionary, which is
-# built up word by word while editing and exists nowhere else.
+# repo. Whatever the machine has is carried over, whether or not the repo
+# declares the key, so that state built up locally is not thrown away. Every
+# other key comes from the repo. cSpell.userWords is the spell-check dictionary,
+# added to word by word while editing, and it exists nowhere else.
 PRESERVE=("cSpell.userWords")
 
 # Scratch space for the rendered settings.json, computed during the preview and
@@ -34,7 +34,9 @@ import sys
 
 
 def read_jsonc(path):
-    src = open(path, encoding='utf-8').read()
+    # utf-8-sig also accepts a byte order mark, which VS Code writes when
+    # files.encoding is set to utf8bom.
+    src = open(path, encoding='utf-8-sig').read()
     out = []
     i, n = 0, len(src)
     while i < n:
@@ -80,7 +82,11 @@ if len(sys.argv) > 2:
         if key in machine:
             data[key] = machine[key]
 
-sys.stdout.write(json.dumps(data, indent=2, sort_keys=True, ensure_ascii=False) + '\n')
+# Written as bytes rather than through sys.stdout, whose encoding follows the
+# locale. The preserved dictionary holds accented words, and under a non-UTF-8
+# locale those would reach the file in a charset VS Code does not read back.
+out = json.dumps(data, indent=2, sort_keys=True, ensure_ascii=False) + '\n'
+sys.stdout.buffer.write(out.encode('utf-8'))
 PY
 }
 
@@ -89,8 +95,10 @@ PY
 # the current target against the incoming content. <tgt_view> is the rendering
 # of <tgt> the diff is shown against, so that a file which is rewritten in a
 # different layout is compared by meaning rather than byte for byte; it defaults
-# to <tgt>. Never writes anything. Returns 0 when the target is already what it
-# should be, 1 when it needs to be written.
+# to <tgt>. Both sides of that diff are rendered, so comments and layout dropped
+# from <tgt> do not show up in it and the labels have to say so. Never writes
+# anything. Returns 0 when the target is already what it should be, 1 when it
+# needs to be written.
 preview_file() {
     local src="$1" tgt="$2" label="$3" tgt_view="${4:-$2}"
 
@@ -105,7 +113,7 @@ preview_file() {
     fi
 
     if cmp -s "$src" "$tgt_view"; then
-        echo "reformat:  $label (formatting only, no value changes)"
+        echo "reformat:  $label (no value changes; comments and layout rewritten)"
         return 1
     fi
 

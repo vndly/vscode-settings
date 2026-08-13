@@ -55,7 +55,15 @@
   "editor.minimap.enabled": false,
   "editor.stickyScroll.enabled": false,
   "editor.tabSize": 2,
+  "eslint.alwaysShowStatus": true,
+  "eslint.enable": true,
+  "eslint.format.enable": true,
   "eslint.run": "onSave",
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "vue"
+  ],
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmPasteNative": false,
   "extensions.ignoreRecommendations": false,
@@ -71,6 +79,8 @@
   "github.copilot.nextEditSuggestions.enabled": true,
   "githubPullRequests.pullBranch": "never",
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "js/ts.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+  "js/ts.updateImportsOnFileMove.enabled": "always",
   "json.schemaDownload.trustedDomains": {
     "https://anthropic.com": true,
     "https://developer.microsoft.com/json-schemas/": true,
@@ -89,6 +99,7 @@
   "todo-tree.general.ripgrep": "/usr/bin/rg",
   "todo-tree.highlights.enabled": true,
   "todo-tree.tree.showScanModeButton": false,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "update.showReleaseNotes": false,
   "window.openFoldersInNewWindow": "on",
