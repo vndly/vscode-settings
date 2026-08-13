@@ -1,0 +1,88 @@
+{
+  "breadcrumbs.enabled": true,
+  "explorer.confirmDragAndDrop": false,
+  "editor.minimap.enabled": false,
+  "workbench.statusBar.feedback.visible": false,
+  "todo-tree.highlights.enabled": true,
+  "todo-tree.general.ripgrep": "/usr/bin/rg",
+  "cSpell.userWords": [],
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "dart.flutterSdkPath": "/opt/Flutter",
+  "todo-tree.tree.showScanModeButton": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "window.openFoldersInNewWindow": "on",
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [
+      80
+    ],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off"
+  },
+  "editor.formatOnSave": true,
+  "extensions.ignoreRecommendations": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "dart.showInspectorNotificationsForWidgetErrors": false,
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": false,
+    "markdown": true
+  },
+  "dart.debugExternalPackageLibraries": true,
+  "dart.debugSdkLibraries": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.startupEditor": "none",
+  "debug.onTaskErrors": "debugAnyway",
+  "editor.stickyScroll.enabled": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "update.showReleaseNotes": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "workbench.editorAssociations": {
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.svg": "default"
+  },
+  "terminal.integrated.stickyScroll.enabled": false,
+  "terminal.integrated.suggest.enabled": false,
+  "claudeCode.preferredLocation": "sidebar",
+  "claudeCode.useTerminal": true,
+  "diffEditor.maxComputationTime": 0,
+  "svelte.enable-ts-plugin": true,
+  "explorer.confirmPasteNative": false,
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "chat.agentsControl.enabled": false,
+  "githubPullRequests.pullBranch": "never",
+  "json.schemaDownload.trustedDomains": {
+    "https://anthropic.com": true,
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://json-schema.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://schemastore.azurewebsites.net/": true,
+    "https://www.schemastore.org/": true
+  },
+  "chat.titleBar.openInAgentsWindow.enabled": false,
+  "[svelte]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+}
