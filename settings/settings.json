@@ -70,7 +70,6 @@
   "files.autoSave": "afterDelay",
   "files.encoding": "utf8",
   "git.openRepositoryInParentFolders": "never",
-  "github.copilot.nextEditSuggestions.enabled": true,
   "githubPullRequests.pullBranch": "never",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "js/ts.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
