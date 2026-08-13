@@ -10,7 +10,7 @@ set -euo pipefail
 # It clones the repository into a throwaway directory and hands off to deploy.sh,
 # which previews the changes and asks for confirmation before writing anything.
 
-REPO_URL="https://github.com/vndly/claude-code-settings.git"
+REPO_URL="https://github.com/vndly/vscode-settings.git"
 BRANCH="main"
 
 # --- Preconditions ----------------------------------------------------------
