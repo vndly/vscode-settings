@@ -42,19 +42,15 @@
   "debug.onTaskErrors": "debugAnyway",
   "diffEditor.maxComputationTime": 0,
   "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit",
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll": "explicit"
   },
   "editor.detectIndentation": false,
   "editor.fontFamily": "'Source Code Pro'",
   "editor.fontSize": 16,
   "editor.formatOnSave": true,
-  "editor.inlineSuggest.enabled": true,
-  "editor.insertSpaces": true,
   "editor.minimap.enabled": false,
   "editor.stickyScroll.enabled": false,
   "editor.tabSize": 2,
-  "eslint.enable": true,
   "eslint.format.enable": true,
   "eslint.run": "onSave",
   "eslint.validate": [
@@ -64,21 +60,12 @@
   ],
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmPasteNative": false,
-  "extensions.ignoreRecommendations": false,
   "files.autoSave": "afterDelay",
-  "files.encoding": "utf8",
   "git.openRepositoryInParentFolders": "never",
   "githubPullRequests.pullBranch": "never",
   "js/ts.updateImportsOnFileMove.enabled": "always",
   "json.schemaDownload.trustedDomains": {
-    "https://anthropic.com": true,
-    "https://developer.microsoft.com/json-schemas/": true,
-    "https://json-schema.org/": true,
-    "https://json.schemastore.org/": true,
-    "https://raw.githubusercontent.com/devcontainers/spec/": true,
-    "https://raw.githubusercontent.com/microsoft/vscode/": true,
-    "https://schemastore.azurewebsites.net/": true,
-    "https://www.schemastore.org/": true
+    "https://anthropic.com": true
   },
   "liveServer.settings.donotShowInfoMsg": true,
   "svelte.enable-ts-plugin": true,
@@ -86,15 +73,10 @@
   "terminal.integrated.stickyScroll.enabled": false,
   "terminal.integrated.suggest.enabled": false,
   "todo-tree.ripgrep.ripgrep": "/usr/bin/rg",
-  "todo-tree.highlights.enabled": true,
   "todo-tree.tree.buttons.scanMode": false,
   "update.showReleaseNotes": false,
   "window.openFoldersInNewWindow": "on",
   "workbench.colorTheme": "Dark+",
   "workbench.editor.enablePreview": false,
-  "workbench.editorAssociations": {
-    "*.copilotmd": "vscode.markdown.preview.editor",
-    "*.svg": "default"
-  },
   "workbench.startupEditor": "none"
 }
