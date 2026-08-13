@@ -58,6 +58,11 @@
     "typescript",
     "vue"
   ],
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmPasteNative": false,
   "files.autoSave": "afterDelay",
