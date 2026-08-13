@@ -41,10 +41,16 @@
   "dart.showInspectorNotificationsForWidgetErrors": false,
   "debug.onTaskErrors": "debugAnyway",
   "diffEditor.maxComputationTime": 0,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.fontFamily": "'Source Code Pro'",
+  "editor.fontSize": 16,
   "editor.formatOnSave": true,
   "editor.inlineSuggest.enabled": true,
   "editor.minimap.enabled": false,
   "editor.stickyScroll.enabled": false,
+  "eslint.run": "onSave",
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmPasteNative": false,
   "extensions.ignoreRecommendations": false,
@@ -79,6 +85,8 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "update.showReleaseNotes": false,
   "window.openFoldersInNewWindow": "on",
+  "workbench.colorTheme": "Dark+",
+  "workbench.editor.enablePreview": false,
   "workbench.editorAssociations": {
     "*.copilotmd": "vscode.markdown.preview.editor",
     "*.svg": "default"
