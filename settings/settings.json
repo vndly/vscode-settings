@@ -30,7 +30,6 @@
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "breadcrumbs.enabled": true,
-  "cSpell.userWords": [],
   "chat.agentsControl.enabled": false,
   "chat.titleBar.openInAgentsWindow.enabled": false,
   "claudeCode.preferredLocation": "sidebar",
