@@ -44,12 +44,15 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
+  "editor.detectIndentation": false,
   "editor.fontFamily": "'Source Code Pro'",
   "editor.fontSize": 16,
   "editor.formatOnSave": true,
   "editor.inlineSuggest.enabled": true,
+  "editor.insertSpaces": true,
   "editor.minimap.enabled": false,
   "editor.stickyScroll.enabled": false,
+  "editor.tabSize": 2,
   "eslint.run": "onSave",
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmPasteNative": false,
