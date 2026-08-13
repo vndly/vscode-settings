@@ -84,5 +84,5 @@
   "chat.titleBar.openInAgentsWindow.enabled": false,
   "[svelte]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  }
 }
