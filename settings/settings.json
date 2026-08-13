@@ -37,7 +37,6 @@
   "dart.debugExternalPackageLibraries": true,
   "dart.debugSdkLibraries": true,
   "dart.flutterSdkPath": "/opt/Flutter",
-  "dart.lineLength": 80,
   "dart.previewFlutterUiGuides": true,
   "dart.showInspectorNotificationsForWidgetErrors": false,
   "debug.onTaskErrors": "debugAnyway",
@@ -55,7 +54,6 @@
   "editor.minimap.enabled": false,
   "editor.stickyScroll.enabled": false,
   "editor.tabSize": 2,
-  "eslint.alwaysShowStatus": true,
   "eslint.enable": true,
   "eslint.format.enable": true,
   "eslint.run": "onSave",
@@ -71,8 +69,6 @@
   "files.encoding": "utf8",
   "git.openRepositoryInParentFolders": "never",
   "githubPullRequests.pullBranch": "never",
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "js/ts.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
   "js/ts.updateImportsOnFileMove.enabled": "always",
   "json.schemaDownload.trustedDomains": {
     "https://anthropic.com": true,
@@ -89,11 +85,9 @@
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.stickyScroll.enabled": false,
   "terminal.integrated.suggest.enabled": false,
-  "todo-tree.general.ripgrep": "/usr/bin/rg",
+  "todo-tree.ripgrep.ripgrep": "/usr/bin/rg",
   "todo-tree.highlights.enabled": true,
-  "todo-tree.tree.showScanModeButton": false,
-  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
-  "typescript.updateImportsOnFileMove.enabled": "always",
+  "todo-tree.tree.buttons.scanMode": false,
   "update.showReleaseNotes": false,
   "window.openFoldersInNewWindow": "on",
   "workbench.colorTheme": "Dark+",
@@ -102,6 +96,5 @@
     "*.copilotmd": "vscode.markdown.preview.editor",
     "*.svg": "default"
   },
-  "workbench.startupEditor": "none",
-  "workbench.statusBar.feedback.visible": false
+  "workbench.startupEditor": "none"
 }
