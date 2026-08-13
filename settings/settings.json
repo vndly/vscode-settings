@@ -65,7 +65,7 @@
   ],
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmPasteNative": false,
-  "files.autoSave": "afterDelay",
+  "files.autoSave": "onFocusChange",
   "git.openRepositoryInParentFolders": "never",
   "githubPullRequests.pullBranch": "never",
   "js/ts.updateImportsOnFileMove.enabled": "always",
