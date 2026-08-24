@@ -32,6 +32,7 @@
   "breadcrumbs.enabled": false,
   "chat.agentsControl.enabled": false,
   "chat.titleBar.openInAgentsWindow.enabled": false,
+  "chat.viewSessions.enabled": false,
   "claudeCode.preferredLocation": "sidebar",
   "claudeCode.useTerminal": true,
   "dart.debugExternalPackageLibraries": true,
