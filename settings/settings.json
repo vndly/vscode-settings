@@ -29,7 +29,6 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "breadcrumbs.enabled": false,
   "chat.agentsControl.enabled": false,
   "chat.titleBar.openInAgentsWindow.enabled": false,
   "chat.viewSessions.enabled": false,
