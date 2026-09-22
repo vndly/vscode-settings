@@ -93,12 +93,10 @@ PY
 # preview_file <src> <tgt> <label> [<tgt_view>]
 # Print a one-line status for the file and, when it changed, a colored diff of
 # the current target against the incoming content. <tgt_view> is the rendering
-# of <tgt> the diff is shown against, so that a file which is rewritten in a
-# different layout is compared by meaning rather than byte for byte; it defaults
-# to <tgt>. Both sides of that diff are rendered, so comments and layout dropped
-# from <tgt> do not show up in it and the labels have to say so. Never writes
-# anything. Returns 0 when the target is already what it should be, 1 when it
-# needs to be written.
+# of <tgt> the diff is shown against, so that settings are compared by meaning
+# rather than byte for byte; it defaults to <tgt>. Never writes anything.
+# Returns 0 when the target is already what it should be, 1 when it needs to be
+# written.
 preview_file() {
     local src="$1" tgt="$2" label="$3" tgt_view="${4:-$2}"
 
@@ -113,8 +111,8 @@ preview_file() {
     fi
 
     if cmp -s "$src" "$tgt_view"; then
-        echo "reformat:  $label (no value changes; comments and layout rewritten)"
-        return 1
+        echo "unchanged: $label"
+        return 0
     fi
 
     echo "changed:   $label"
@@ -133,9 +131,6 @@ if [ ! -d "$OUTPUT" ]; then
     exit 1
 fi
 
-echo "Previewing changes against $OUTPUT"
-echo
-
 # settings.json: the repo wins for every key except the preserved ones. The
 # machine file is rendered the same way as the result before being diffed, so
 # the preview shows the settings that actually change rather than the whole file
@@ -144,10 +139,24 @@ settings_changed=0
 if [ -f "$OUTPUT/settings.json" ]; then
     render "$INPUT/settings.json" "$OUTPUT/settings.json" "${PRESERVE[@]}" > "$WORK/new/settings.json"
     render "$OUTPUT/settings.json" > "$WORK/current/settings.json"
+else
+    render "$INPUT/settings.json" > "$WORK/new/settings.json"
+fi
+
+if [ -f "$OUTPUT/settings.json" ] && \
+    cmp -s "$WORK/new/settings.json" "$WORK/current/settings.json" && \
+    cmp -s "$INPUT/keybindings.json" "$OUTPUT/keybindings.json"; then
+    echo "Already up to date."
+    exit 0
+fi
+
+echo "Previewing changes against $OUTPUT"
+echo
+
+if [ -f "$OUTPUT/settings.json" ]; then
     preview_file "$WORK/new/settings.json" "$OUTPUT/settings.json" "settings.json" \
         "$WORK/current/settings.json" || settings_changed=1
 else
-    render "$INPUT/settings.json" > "$WORK/new/settings.json"
     preview_file "$WORK/new/settings.json" "$OUTPUT/settings.json" "settings.json" || settings_changed=1
 fi
 
@@ -156,12 +165,6 @@ fi
 keybindings_changed=0
 preview_file "$INPUT/keybindings.json" "$OUTPUT/keybindings.json" "keybindings.json" \
     || keybindings_changed=1
-
-if [ "$settings_changed" -eq 0 ] && [ "$keybindings_changed" -eq 0 ]; then
-    echo
-    echo "Already up to date. Nothing to do."
-    exit 0
-fi
 
 # --- Confirm ----------------------------------------------------------------
 
